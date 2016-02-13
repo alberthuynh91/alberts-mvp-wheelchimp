@@ -6,7 +6,7 @@ angular.module('shortly.services', [])
     // console.log('inside the get all function!!!!!!!!');
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links'
     })
     .then(function (resp) {
       // console.log('------> This is the resp data: ', resp.data);
