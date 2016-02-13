@@ -7,11 +7,11 @@
   </head>
   <body>
     <h1>Shortly</h1>
-    <div class='navigation'>
+    <div class='navigation' ng-controller='AuthController'>
     <ul>
       <li><a href="#/links" class='index'>All Links</a></li>
       <li><a href="#/shorten" class="create">Shorten URL</a></li>
-      <li ng-click="signout()"><a href="#/logout" class="logout">Logout</a></li>
+      <li ng-click="signout()"><a class="logout">Logout</a></li>
     </ul>
 
     </div>
