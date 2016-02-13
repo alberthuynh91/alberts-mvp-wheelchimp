@@ -1,3 +1,9 @@
-<div id='container'>
+<div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
+  <h1>Links</h1>
+  <input ng-model='newUrl' />
+
+  <ul>
+    <li ng-repeat="link in links track by $index">{{ link }}</li>
+  </ul>
 </div>
