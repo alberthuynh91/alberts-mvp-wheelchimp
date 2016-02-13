@@ -1,6 +1,7 @@
 var linksController = require('../links/linkController.js');
 var userController = require('../users/userController.js');
 var helpers = require('./helpers.js'); // our custom middleware
+var jwt = require('jwt-simple');
 
 module.exports = function (app, express) {
   app.get('/:code', linksController.navToLink);

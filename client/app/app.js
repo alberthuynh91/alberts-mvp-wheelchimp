@@ -1,3 +1,4 @@
+
 angular.module('shortly', [
   'shortly.services',
   'shortly.links',
@@ -14,7 +15,9 @@ angular.module('shortly', [
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController',
+      access:{
       requireLogin: false
+      }
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
@@ -24,12 +27,12 @@ angular.module('shortly', [
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController',
-      requireLogin: true
+      autheticate: true
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController',
-      requireLogin: true
+      authenticate: true
     });
     // Your code here
 
