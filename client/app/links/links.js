@@ -11,15 +11,15 @@ angular.module('shortly.links', [])
       $scope.data.links = data;
     });
 
-  $scope.addOne = function () {
-    Links.addOne($scope.link)
-      .then(function (data) {
-        // add link to database
-        $window.localStorage.setItem('com.shortly', data);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.log('err in the addOne function: ', error);
-      });
-  };
+  // $scope.addOne = function () {
+  //   Links.addOne($scope.link)
+  //     .then(function (data) {
+  //       // add link to database
+  //       $window.localStorage.setItem('com.shortly', data);
+  //       $location.path('/links');
+  //     })
+  //     .catch(function (error) {
+  //       console.log('err in the addOne function: ', error);
+  //     });
+  // };
 });

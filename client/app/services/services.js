@@ -6,7 +6,7 @@ angular.module('shortly.services', [])
     // console.log('inside the get all function!!!!!!!!');
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url: '/api/links/'
     })
     .then(function (resp) {
       // console.log('------> This is the resp data: ', resp.data);
@@ -17,11 +17,11 @@ angular.module('shortly.services', [])
   var addOne = function (link) {
     return $http({
       method: 'POST',
-      url: '/api/links',
-      data: link
+      url: '/api/links/',
+      data: {url : link}
     })
     .then(function (resp) {
-      // console.log('------> This is the resp data: ', resp);
+      console.log('------> This is the resp data in addone!!!!: ', resp);
       return resp;
     });
   };

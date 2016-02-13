@@ -6,6 +6,10 @@ angular.module('shortly.auth', [])
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 
+  if (!Auth.isAuth()) {
+    $location.path('/signin');
+  }
+
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
@@ -26,5 +30,9 @@ angular.module('shortly.auth', [])
       .catch(function (error) {
         console.error(error);
       });
+  };
+
+  $scope.signout = function () {
+    Auth.signout();
   };
 });

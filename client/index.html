@@ -7,9 +7,20 @@
   </head>
   <body>
     <h1>Shortly</h1>
+    <div class='navigation'>
+    <ul>
+      <li><a href="#/links" class='index'>All Links</a></li>
+      <li><a href="#/shorten" class="create">Shorten URL</a></li>
+      <li ng-click="signout()"><a href="#/logout" class="logout">Logout</a></li>
+    </ul>
+
+    </div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <div ng-view>
+<!--       <div ng-controller='LinksController'>Links</div>
+      <div ng-controller='AuthController'>Login</div> -->
+    </div>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
