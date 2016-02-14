@@ -2,12 +2,15 @@
   <!-- Your html here -->
 
   <h1>Add a link</h1>
-  <input ng-model='newUrl' />
+  <input ng-model='newUrl' placeholder='Enter your url here' />
   <br>
   <div class='submit' ng-model='submitted'>{{submitted}}</div>
   <br>
   <button ng-click="addLink(newUrl); newUrl = ''; submitted='Submitted New Link'; messageTime(submitted);">Submit</button>
 </div>
+
+<!-- 
+<
 
 
 

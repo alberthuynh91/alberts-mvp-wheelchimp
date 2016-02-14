@@ -3,13 +3,12 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   var getAll = function () {
-    // console.log('inside the get all function!!!!!!!!');
     return $http({
       method: 'GET',
       url: '/api/links/'
     })
+    // consume the promise and return the data returned from the promise
     .then(function (resp) {
-      // console.log('------> This is the resp data: ', resp.data);
       return resp.data;
     });
   };
@@ -21,7 +20,6 @@ angular.module('shortly.services', [])
       data: {url : link}
     })
     .then(function (resp) {
-      console.log('------> This is the resp data in addone!!!!: ', resp);
       return resp;
     });
   };
