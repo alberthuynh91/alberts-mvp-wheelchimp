@@ -1,5 +1,48 @@
-angular.module('shortly.services', [])
+angular.module('wheelchimp.services', [])
 
+.factory('Listings', function ($http) {
+  var getListings = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/listings/'
+    })
+    .then(function (resp) {
+      console.log('in the getlisting servers api call');
+      return resp.data;
+    });
+  };
+
+  var postListing = function (listing) {
+    return $http({
+      method: 'POST',
+      url: '/api/listings/',
+      data: listing
+    })
+    .then(function (resp) {
+      console.log('postListing server executed: ', resp);
+      return resp;
+    });
+  };
+
+
+  var deleteListing = function (listing) {
+    return $http({
+      method: 'DELETE',
+      url: '/api/listings/',
+      data: { listing: listing }
+    })
+    .then(function (resp) {
+      return resp;
+    });
+  };
+
+  return {
+    getListings: getListings,
+    postListing: postListing,
+    deleteListing: deleteListing
+  };
+
+})
 .factory('Links', function ($http) {
   // Your code here
   var getAll = function () {
@@ -28,6 +71,7 @@ angular.module('shortly.services', [])
     getAll: getAll,
     addOne: addOne
   };
+
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

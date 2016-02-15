@@ -22,4 +22,4 @@ LinkSchema.pre('save', function (next) {
   next();
 });
 
-module.exports = mongoose.model('Link', LinkSchema);
+module.exports = mongoose.model('link', LinkSchema);

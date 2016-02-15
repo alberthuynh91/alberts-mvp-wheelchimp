@@ -1,4 +1,4 @@
-angular.module('shortly.shorten', [])
+angular.module('wheelchimp.shorten', [])
 
 .controller('ShortenController', function ($scope, $timeout, $location, Links) {
   // Your code here
@@ -7,7 +7,7 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function (data) {
     $scope.loading = true;
     Links.addOne(data)
-      .then(function() {
+      .then(function () {
         $scope.loading = false;
       })
       .catch(function (error) {

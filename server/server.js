@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 
 var app = express();
 
-// connect to mongo database named "shortly"
-mongoose.connect('mongodb://localhost/shortly');
+// connect to mongo database named "wheelchimp"
+mongoose.connect('mongodb://localhost/wheelchimp');
 
 // configure our server with all the middleware and routing
 require('./config/middleware.js')(app, express);

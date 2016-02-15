@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html ng-app='shortly'>
+<html ng-app='wheelchimp'>
   <head>
     <meta charset="utf-8" />
-    <title>Shortly</title>
+    <title>Wheelchimp!</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
   </head>
   <body>
-    <h1>Shortly</h1>
+    <h1>Wheelchimp</h1>
     <div class='navigation' ng-controller='AuthController'>
-    <ul>
-      <li><a href="#/links" class='index'>All Links</a></li>
-      <li><a href="#/shorten" class="create">Shorten URL</a></li>
-      <li ng-click="signout()"><a class="logout">Logout</a></li>
-    </ul>
-
+      <ul>
+        <li><a href="#/links" class='index'>All Links</a></li>
+        <li><a href="#/shorten" class="create">Shorten URL</a></li>
+        <li><a href='#/listings'>Listings</a></li>
+        <li><a href='#/create'>Create New Listing</a></li>
+        <li ng-click="signout()"><a class="logout">Logout</a></li>
+      </ul>
     </div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
@@ -29,6 +30,8 @@
     <script src="app/links/links.js"></script>
     <script src="app/shorten/shorten.js"></script>
     <script src="app/services/services.js"></script>
+    <script src="app/listings/listings.js"></script>
+    <script src="app/createListing/createListing.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>

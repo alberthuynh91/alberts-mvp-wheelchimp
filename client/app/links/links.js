@@ -1,4 +1,4 @@
-angular.module('shortly.links', [])
+angular.module('wheelchimp.links', [])
 
 .controller('LinksController', function ($scope, $window, Links) {
   // Your code here
