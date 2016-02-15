@@ -30,7 +30,6 @@ angular.module('wheelchimp', [
     .when('/listings', {
       templateUrl: 'app/listings/listings.html',
       controller: 'ListingsController',
-      authenticate: true
     })
     .when('/create', {
       templateUrl: 'app/createListing/createListing.html',

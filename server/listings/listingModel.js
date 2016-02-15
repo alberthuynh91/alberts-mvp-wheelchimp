@@ -9,37 +9,37 @@ var setPrice = function (num) {
   return num * 100;
 }
 
-var ListingSchema = new mongoose.Schema({
-  description: String,
-  title: String
-});
-
 // var ListingSchema = new mongoose.Schema({
-
 //   description: String,
-//   img: { data: Buffer, contentType: String },
-//   link: String,
-//   price: { type: Number, get: getPrice, set: setPrice },
-//   title: { type: String, required: true},
-//   url: String,
-//   visits: Number,
-//   location: String,
-//   created_at: { type: Date },
-//   updated_at: { type: Date },
-//   wheel_specs: { frontDiameter: Number, 
-//                 rearDiameter: Number, 
-//                 frontOffset: Number, 
-//                 rearOffset: Number,
-//                 frontWidth: Number,
-//                 rearWidth: Number, 
-//                 boltPattern: String
-//   },
-//   optional_specs: { frontLipSize: Number,
-//                     rearLipSize: Number,
-//                     faceColor: String,
-//                     condition: String
-//   }
+//   title: String
 // });
+
+var ListingSchema = new mongoose.Schema({
+
+  description: String,
+  img: { data: Buffer, contentType: String },
+  link: String,
+  price: { type: Number, get: getPrice, set: setPrice },
+  title: { type: String, required: true},
+  url: String,
+  visits: Number,
+  location: String,
+  created_at: { type: Date },
+  updated_at: { type: Date },
+  wheel_specs: { frontDiameter: Number, 
+                rearDiameter: Number, 
+                frontOffset: Number, 
+                rearOffset: Number,
+                frontWidth: Number,
+                rearWidth: Number, 
+                boltPattern: String
+  },
+  optional_specs: { frontLipSize: Number,
+                    rearLipSize: Number,
+                    faceColor: String,
+                    condition: String
+  }
+});
 
 var createSha = function (url) {
   var shasum = crypto.createHash('sha1');
