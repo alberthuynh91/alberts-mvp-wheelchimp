@@ -1,11 +1,14 @@
 angular.module('wheelchimp.createListings', [])
 
-.controller('CreateListingsController', function ($scope, $timeout, $location, Listings) {
+.controller('CreateListingsController', function ($scope, $location, Listings) {
 
   $scope.createListing = {};
+  $scope.listingObject = {};
 
   $scope.submitListing = function (listing) {
+
     $scope.loading = true;
+
     $scope.listingObject = { 
       title: $scope.listingTitle, 
       description: $scope.listingDescription,
@@ -18,6 +21,7 @@ angular.module('wheelchimp.createListings', [])
       rearwidth: $scope.rearWidth,
       boltpattern: $scope.boltPattern
     };
+
     Listings.postListing($scope.listingObject)
       .then(function () {
         console.log('submit listing function executed, the object is: ', $scope.listingObject);

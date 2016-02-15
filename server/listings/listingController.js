@@ -33,7 +33,7 @@ module.exports = {
   // This function is executed when postListing service is called
   newListing: function (req, res, next) {
 
-    console.log('in newlising request body is: ', req.body);
+    console.log('newListing function in server controller executed, with req.body: ', req.body);
     var title = req.body.title;
     var description = req.body.description;
     var price = req.body.price;
@@ -45,18 +45,19 @@ module.exports = {
     var rearwidth = req.body.rearwidth;
     var boltpattern = req.body.boltpattern;
 
-
     var newListing = {
       title: title,
       description: description,
       price: price,
-      frontdiameter: frontdiameter,
-      reardiameter: reardiameter,
-      frontoffset: frontoffset,
-      rearoffset: rearoffset,
-      frontwidth: frontwidth,
-      rearwidth: rearwidth,
-      boltpattern: boltpattern
+      wheel_specs: {
+        frontdiameter: frontdiameter,
+        reardiameter: reardiameter,
+        frontoffset: frontoffset,
+        rearoffset: rearoffset,
+        frontwidth: frontwidth,
+        rearwidth: rearwidth,
+        boltpattern: boltpattern
+      }
     }
 
     res.json(createListing(newListing));

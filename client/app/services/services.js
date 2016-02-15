@@ -19,11 +19,10 @@ angular.module('wheelchimp.services', [])
       data: listing
     })
     .then(function (resp) {
-      console.log('postListing server executed: ', resp);
+      console.log('postListing service function executed: ', resp);
       return resp;
     });
   };
-
 
   var deleteListing = function (listing) {
     return $http({
@@ -35,13 +34,12 @@ angular.module('wheelchimp.services', [])
       return resp;
     });
   };
-
+  
   return {
     getListings: getListings,
     postListing: postListing,
     deleteListing: deleteListing
   };
-
 })
 .factory('Links', function ($http) {
   // Your code here
