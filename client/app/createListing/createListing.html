@@ -4,6 +4,19 @@
   <form novalidate class="simple-form">
     Title: <input type="text" ng-model="listingTitle" /><br />
     Description: <input type="text" ng-model="listingDescription" /><br />
+    Price: <input type="text" ng-model="listingPrice" /><br />
+    Front Diameter: <input type="text" ng-model="frontDiameter" /><br />
+    Rear Diameter: <input type="text" ng-model="rearDiameter" /><br />
+    Front Offset: <input type="text" ng-model="frontOffset" /><br />
+    Rear Offset: <input type="text" ng-model="rearOffset" /><br />
+    Front Width: <input type="text" ng-model="frontWidth" /><br />
+    Rear Width: <input type="text" ng-model="rearWidth" /><br />
+    Bolt Pattern: 
+    <select name="boltPattern" ng-model="boltPattern" />
+      <option value="5x114.3">5x114.3</option>
+      <option value="5x100">5x100</option>
+  </select>
+
     <input type="submit" ng-click="submitListing()" value="Save" />
   </form>
 </div>

@@ -18,10 +18,8 @@ var ListingSchema = new mongoose.Schema({
 
   description: String,
   img: { data: Buffer, contentType: String },
-  link: String,
   price: { type: Number, get: getPrice, set: setPrice },
   title: { type: String, required: true},
-  url: String,
   visits: Number,
   location: String,
   created_at: { type: Date },
