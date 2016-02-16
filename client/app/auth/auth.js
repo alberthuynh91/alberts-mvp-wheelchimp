@@ -5,12 +5,13 @@ angular.module('wheelchimp.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
+  $scope.isLoggedIn = Auth.isAuth();
 
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
+        $location.path('/listings');
       })
       .catch(function (error) {
         console.error(error);
@@ -21,7 +22,7 @@ angular.module('wheelchimp.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
+        $location.path(__dirname);
       })
       .catch(function (error) {
         console.error(error);
@@ -30,5 +31,6 @@ angular.module('wheelchimp.auth', [])
 
   $scope.signout = function () {
     Auth.signout();
+    $location.path(__dirname);
   };
 });

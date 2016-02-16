@@ -1,24 +1,75 @@
 <div id='container' ng-controller='CreateListingsController'>
-  <h1>Current Listings</h1>
+  <h1>Post New Listing</h1>
 
-  <form novalidate class="simple-form">
-    Title: <input type="text" ng-model="listingTitle" /><br />
-    Description: <input type="text" ng-model="listingDescription" /><br />
-    Price: <input type="text" ng-model="listingPrice" /><br />
-    Front Diameter: <input type="text" ng-model="frontDiameter" /><br />
-    Rear Diameter: <input type="text" ng-model="rearDiameter" /><br />
-    Front Offset: <input type="text" ng-model="frontOffset" /><br />
-    Rear Offset: <input type="text" ng-model="rearOffset" /><br />
-    Front Width: <input type="text" ng-model="frontWidth" /><br />
-    Rear Width: <input type="text" ng-model="rearWidth" /><br />
-    Bolt Pattern: 
-    <select name="boltPattern" ng-model="boltPattern" />
-      <option value="5x114.3">5x114.3</option>
-      <option value="5x100">5x100</option>
-  </select>
+<div class="row">
+  <div class="col-sm-6">
+    <form novalidate class="simple-form">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input class="form-control" type="text" ng-model="listingTitle" />
+      </div>
+      <div class="form-group">
+        <label for="comment">Description: </label>
+        <textarea class="form-control" rows="5" ng-model="listingDescription" ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="title">Front Diameter: </label>
+        <input class="form-control" type="text" ng-model="frontDiameter" /><br />
+      </div>
+      <div class="form-group">
+        <label for="title">Rear Diameter: </label>
+        <input class="form-control" type="text" ng-model="rearDiameter" /><br />
+      </div>
+      <div class="form-group">
+        <label for="title">Front Offset: </label>
+        <input class="form-control" type="text" ng-model="frontOffset" /><br />
+      </div>
+      <div class="form-group">
+        <label for="title">Rear Offset: </label>
+        <input class="form-control" type="text" ng-model="rearOffset" /><br />
+      </div>
+      <div class="form-group">
+        <label for="title">Front Width: </label>
+        <input class="form-control" type="text" ng-model="frontWidth" /><br />
+      </div>
+      <div class="form-group">
+        <label for="title">Rear Width: </label>
+        <input class="form-control" type="text" ng-model="rearWidth" /><br />
+      </div>
+      <div class="form-group">
+        <label for="boltPattern">Bolt Pattern: </label>
+          <select class="form-control" name="boltPattern" ng-model="boltPattern" />
+            <option value="" selected="selected">------</option>
+            <option value="4x100">4x100</option>
+            <option value="4x114.3">4x114.3</option>
+            <option value="5x100">5x100</option>
+            <option value="5x108">5x108</option>
+            <option value="5x112">5x112</option>
+            <option value="5x114.3">5x114.3</option>
+            <option value="5x120">5x120</option>
+            <option value="5x120.65">5x120.65</option>
+            <option value="5x130">5x130</option>
+          </select>
+      </div>
 
-    <input type="submit" ng-click="submitListing()" value="Save" />
-  </form>
+      <button class="btn btn-primary" type="submit" ng-click="submitListing()" value="Save" />Create New Listing</button>
+    </form>
+
+
+
+
+      <div ng-repeat="step in stepsModel">
+          <img class="thumb" ng-src="{{step}}" />
+      </div>
+      
+      <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" multiple />
+
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+ 
+
 </div>
 
 

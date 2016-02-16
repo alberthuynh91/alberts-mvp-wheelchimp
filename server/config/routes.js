@@ -19,6 +19,9 @@ module.exports = function (app, express) {
 
   app.get('/api/listings/', listingsController.allListings);
   app.post('/api/listings/', listingsController.newListing);
+
+  app.post('/upload/image', listingsController.uploadImage);
+  
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
   app.use(helpers.errorLogger);

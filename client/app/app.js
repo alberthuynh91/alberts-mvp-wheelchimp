@@ -5,7 +5,7 @@ angular.module('wheelchimp', [
   'wheelchimp.auth',
   'wheelchimp.listings',
   'wheelchimp.createListings',
-  'ngRoute'
+  'ngRoute',
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider

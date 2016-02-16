@@ -9,11 +9,6 @@ var setPrice = function (num) {
   return num * 100;
 }
 
-// var ListingSchema = new mongoose.Schema({
-//   description: String,
-//   title: String
-// });
-
 var ListingSchema = new mongoose.Schema({
 
   description: String,
