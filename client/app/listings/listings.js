@@ -1,6 +1,6 @@
 angular.module('wheelchimp.listings', [])
 
-.controller('ListingsController', function ($scope, $location, Listings) {
+.controller('ListingsController', function ($scope, $window, $location, Listings) {
 
   $scope.listing = {};
 
@@ -26,10 +26,13 @@ angular.module('wheelchimp.listings', [])
   };
 
   $scope.removeListing = function (listing) {
+    console.log('removeListing function trigger on client side');
     $scope.loading = true;
     Listings.deleteListing(listing)
       .then(function () {
+        console.log('Delete successful with:', listing);
         $scope.loading = false;
+        $window.location.reload();
       })
       .catch(function (error) {
         console.error('Error removing listing: ', error);

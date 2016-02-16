@@ -1,14 +1,6 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 
-var getPrice = function (num) {
-  return (num / 100).toFixed(2);
-}
-
-var setPrice = function (num) {
-  return num * 100;
-}
-
 // var ListingSchema = new mongoose.Schema({
 
 //   description: String,
@@ -35,7 +27,7 @@ var setPrice = function (num) {
 
 var ListingSchema = new mongoose.Schema({
   description: String,
-  price: { type: Number, get: getPrice, set: setPrice },
+  price: Number,
   title: { type: String, required: true},
   wheel_specs: { frontdiameter: Number, 
                 reardiameter: Number, 
@@ -44,7 +36,8 @@ var ListingSchema = new mongoose.Schema({
                 frontwidth: Number,
                 rearwidth: Number, 
                 boltpattern: String
-  }
+  },
+  img: String
 });
 
 var createSha = function (url) {

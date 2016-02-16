@@ -12,6 +12,7 @@ angular.module('wheelchimp.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/listings');
+        $window.location.reload();
       })
       .catch(function (error) {
         console.error(error);
@@ -22,7 +23,8 @@ angular.module('wheelchimp.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
-        $location.path(__dirname);
+        $location.path('/listings');
+        $window.location.reload();
       })
       .catch(function (error) {
         console.error(error);

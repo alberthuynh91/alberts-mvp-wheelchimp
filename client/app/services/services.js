@@ -28,9 +28,10 @@ angular.module('wheelchimp.services', [])
     return $http({
       method: 'DELETE',
       url: '/api/listings/',
-      data: { listing: listing }
+      data: listing
     })
     .then(function (resp) {
+      console.log('deleteListing service function executed, the response:', resp);
       return resp;
     });
   };

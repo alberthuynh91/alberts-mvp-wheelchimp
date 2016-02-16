@@ -20,7 +20,8 @@ angular.module('wheelchimp.createListings', [])
       rearoffset: $scope.rearOffset,
       frontwidth: $scope.frontWidth,
       rearwidth: $scope.rearWidth,
-      boltpattern: $scope.boltPattern
+      boltpattern: $scope.boltPattern,
+      img: '/img/uploads/default.jpg'
     };
 
     // Post the listing with the object created above
@@ -28,7 +29,7 @@ angular.module('wheelchimp.createListings', [])
       .then(function () {
         console.log('Listing Submitted!' , $scope.listingObject);
         $scope.loading = false;
-        // $location.path('/listings');
+        $location.path('/listings');
       })
       .catch(function (error) {
         console.log('There was an error submitting the listing: ', error);

@@ -19,6 +19,8 @@ module.exports = function (app, express) {
 
   app.get('/api/listings/', listingsController.allListings);
   app.post('/api/listings/', listingsController.newListing);
+  app.delete('/api/listings/', listingsController.removeListing);
+
 
   // app.post('/upload/image', listingsController.uploadImage);
   

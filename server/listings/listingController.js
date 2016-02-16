@@ -3,12 +3,10 @@ var Listing = require('./listingModel.js');
     util = require('../config/utils.js');
 
 // Promisify a few mongoose methods with the `q` promise library
-// var findLink = Q.nbind(Link.findOne, Link);
-// var createLink = Q.nbind(Link.create, Link);
-
 var findListing = Q.nbind(Listing.findOne, Listing);
 var createListing = Q.nbind(Listing.create, Listing);
 var findAllListings = Q.nbind(Listing.find, Listing);
+var removeListing = Q.nbind(Listing.remove, Listing);
 
 // These functions get called from the routes.js file
 // Example:
@@ -30,6 +28,31 @@ module.exports = {
       });
   },
 
+  removeListing: function (req, res, next) {
+    console.log('========in removelisting call');
+
+    var body = '';
+
+    req.on('data', function(chunk) {
+      body += chunk;
+    });
+
+    req.on('end', function () {
+      var listingProperties = JSON.parse(body);
+      console.log(listingProperties['_id']);
+      var query = {
+        _id: listingProperties['_id']
+      };
+
+      console.log('the query: ', query);
+
+      Listing.remove(query, function(err, result) {
+          if(err) { throw err; }
+          res.end("<p>Product removed");
+        });
+    });
+  },
+
   // This function is executed when postListing service is called
   newListing: function (req, res, next) {
 
@@ -44,6 +67,7 @@ module.exports = {
     var frontwidth = req.body.frontwidth;
     var rearwidth = req.body.rearwidth;
     var boltpattern = req.body.boltpattern;
+    var img = '/img/uploads/default.jpg'
 
     var newListing = {
       title: title,
@@ -56,7 +80,8 @@ module.exports = {
         rearoffset: rearoffset,
         frontwidth: frontwidth,
         rearwidth: rearwidth,
-        boltpattern: boltpattern
+        boltpattern: boltpattern,
+        img: img
       }
     }
 
