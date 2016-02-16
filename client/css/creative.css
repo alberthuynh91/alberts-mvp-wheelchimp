@@ -51,17 +51,27 @@ p {
     line-height: 1.5;
 }
 
+.heading {
+    background-color: grey;
+    width: 100%;
+}
+
+#listingsTable {
+    padding: 15px;
+    margin: 50px 20px 20px 20px;
+}
+
 #signupnow {
     position:absolute;
     transition: .9s ease;
-    top: 275px;
-    left: 26%;
+    top: 300px;
+    left: 28%;
 }
 
 #loginnow {
     position:absolute;
     transition: .9s ease;
-    top: 275px;
+    top: 300px;
     left: 38%;
 }
 
@@ -119,6 +129,7 @@ aside {
     color: #222;
 }
 
+
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
     color: #f05f40;
@@ -140,19 +151,19 @@ aside {
         border-color: rgba(255,255,255,.3);
         background-color: transparent;
     }
-
+    /* For navbar BEFORE scroll title left hand side */
     .navbar-default .navbar-header .navbar-brand {
-        color: rgba(255,255,255,.7);
+        color: #a94442;
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
         color: #fff;
     }
-
+    /* For nav bar default link colors BEFORE scroll */
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: #a94442;
     }
 
     .navbar-default .nav > li>a:hover,

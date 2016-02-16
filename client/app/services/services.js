@@ -35,22 +35,10 @@ angular.module('wheelchimp.services', [])
     });
   };
 
-  var uploadImage = function(image) {
-    return $http({
-      method: 'POST',
-      url: '/upload/image',
-      data: image
-    })
-    .then(function (resp) {
-      return resp;
-    });
-  };
-
   return {
     getListings: getListings,
     postListing: postListing,
-    deleteListing: deleteListing,
-    uploadImage: uploadImage
+    deleteListing: deleteListing
   };
 })
 .factory('Links', function ($http) {

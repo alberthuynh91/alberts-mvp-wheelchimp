@@ -1,9 +1,6 @@
 var Listing = require('./listingModel.js');
     Q = require('q');
     util = require('../config/utils.js');
-    // uuid = require('node-uuid');
-    // multiparty = require('multiparty');
-    // fs = require('fs');
 
 // Promisify a few mongoose methods with the `q` promise library
 // var findLink = Q.nbind(Link.findOne, Link);
@@ -47,7 +44,6 @@ module.exports = {
     var frontwidth = req.body.frontwidth;
     var rearwidth = req.body.rearwidth;
     var boltpattern = req.body.boltpattern;
-    var img = req.body.listingImage;
 
     var newListing = {
       title: title,
@@ -60,40 +56,11 @@ module.exports = {
         rearoffset: rearoffset,
         frontwidth: frontwidth,
         rearwidth: rearwidth,
-        boltpattern: boltpattern,
-        img: img
+        boltpattern: boltpattern
       }
     }
 
     res.json(createListing(newListing));
-  },
-
-  uploadImage: function (req, res) {
-    console.log('uploadImage function in listingController for server ran!');
-    var form = new multiparty.Form();
-    form.parse(req, function(err, fields, files) {
-        var file = files.file[0];
-        var contentType = file.headers['content-type'];
-        var tmpPath = file.path;
-        var extIndex = tmpPath.lastIndexOf('.');
-        var extension = (extIndex < 0) ? '' : tmpPath.substr(extIndex);
-        // uuid is for generating unique filenames. 
-        var fileName = uuid.v4() + extension;
-        var destPath = __dirname + fileName;
-
-        // Server side file type checker.
-        if (contentType !== 'image/png' && contentType !== 'image/jpeg') {
-            fs.unlink(tmpPath);
-            return res.status(400).send('Unsupported file type.');
-        }
-
-        fs.rename(tmpPath, destPath, function(err) {
-            if (err) {
-                return res.status(400).send('Image is not saved:');
-            }
-            return res.json(destPath);
-        });
-    });
   },
 
   navToListing: function (req, res, next) {

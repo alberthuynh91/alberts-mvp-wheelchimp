@@ -1,14 +1,33 @@
-<div id='container' ng-controller='ListingsController'>
-  <h1>Current Listings</h1>
-  <div class='listing' ng-repeat='listing in listing.listings' />
-    <div class='listingTitle'>{{ listing.title }}</div>
-    <div class='listingDescription'>{{ listing.description }}</div>
-    <div class='listingPrice'>${{ listing.price }}</div>
-    <div class='wheelspecs'>{{ listing.wheel_specs.frontdiameter }} x {{ listing.wheel_specs.frontwidth }} {{ listing.wheel_specs.frontoffset }}</div>
-    <div class='wheelspecs'>{{ listing.wheel_specs.reardiameter }} x {{ listing.wheel_specs.rearwidth }} {{ listing.wheel_specs.rearoffset }}</div>
-    <div class='wheelspecs'>{{ listing.wheel_specs.boltpattern }}</div>
-    <br>
-  </div>
+<div id="listingsTable" class="container" ng-controller='ListingsController'>
+  <div class="heading"><h1>Marketplace</h1></div>
+  <br>
+  <h3>Current Listings</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Front Wheel</th>
+        <th>Rear Wheel</th>
+        <th>Bolt Pattern</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat='listing in listing.listings' />
+        <td>{{ listing.img }}</td>
+        <td>{{ listing.title }}</td>
+        <td>{{ listing.description }}</td>
+        <td>${{ listing.price }}</td>
+        <td>{{ listing.wheel_specs.frontdiameter }} x {{ listing.wheel_specs.frontwidth }} {{ listing.wheel_specs.frontoffset }}</td>
+        <td>{{ listing.wheel_specs.reardiameter }} x {{ listing.wheel_specs.rearwidth }} {{ listing.wheel_specs.rearoffset }}</td>
+        <td>{{ listing.wheel_specs.boltpattern }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
 
 

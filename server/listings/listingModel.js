@@ -9,16 +9,34 @@ var setPrice = function (num) {
   return num * 100;
 }
 
-var ListingSchema = new mongoose.Schema({
+// var ListingSchema = new mongoose.Schema({
 
+//   description: String,
+//   price: { type: Number, get: getPrice, set: setPrice },
+//   title: { type: String, required: true},
+//   visits: Number,
+//   location: String,
+//   created_at: { type: Date },
+//   updated_at: { type: Date },
+  // wheel_specs: { frontdiameter: Number, 
+  //               reardiameter: Number, 
+  //               frontoffset: Number, 
+  //               rearoffset: Number,
+  //               frontwidth: Number,
+  //               rearwidth: Number, 
+  //               boltpattern: String
+  // },
+//   optional_specs: { frontLipSize: Number,
+//                     rearLipSize: Number,
+//                     faceColor: String,
+//                     condition: String
+//   }
+// });
+
+var ListingSchema = new mongoose.Schema({
   description: String,
-  img: { data: Buffer, contentType: String },
   price: { type: Number, get: getPrice, set: setPrice },
   title: { type: String, required: true},
-  visits: Number,
-  location: String,
-  created_at: { type: Date },
-  updated_at: { type: Date },
   wheel_specs: { frontdiameter: Number, 
                 reardiameter: Number, 
                 frontoffset: Number, 
@@ -26,11 +44,6 @@ var ListingSchema = new mongoose.Schema({
                 frontwidth: Number,
                 rearwidth: Number, 
                 boltpattern: String
-  },
-  optional_specs: { frontLipSize: Number,
-                    rearLipSize: Number,
-                    faceColor: String,
-                    condition: String
   }
 });
 

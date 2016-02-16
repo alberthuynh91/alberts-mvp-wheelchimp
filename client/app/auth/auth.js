@@ -31,6 +31,6 @@ angular.module('wheelchimp.auth', [])
 
   $scope.signout = function () {
     Auth.signout();
-    $location.path(__dirname);
+    $window.location.reload();
   };
 });
