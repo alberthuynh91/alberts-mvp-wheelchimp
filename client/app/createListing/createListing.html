@@ -18,27 +18,45 @@
       </div>
       <div class="form-group">
         <label for="title">Front Diameter: </label>
-        <input class="form-control" type="text" ng-model="frontDiameter" /><br />
+        <select class="form-control" ng-model="frontDiameter">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="diameter in diameters" ng-value="diameter">{{ diameter }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="title">Rear Diameter: </label>
-        <input class="form-control" type="text" ng-model="rearDiameter" /><br />
+        <select class="form-control" ng-model="rearDiameter">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="diameter in diameters" ng-value="diameter">{{ diameter }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="title">Front Offset: </label>
-        <input class="form-control" type="text" ng-model="frontOffset" /><br />
+        <select class="form-control" ng-model="frontOffset">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="offset in offsets" ng-value="offset">{{ offset }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="title">Rear Offset: </label>
-        <input class="form-control" type="text" ng-model="rearOffset" /><br />
+        <select class="form-control" ng-model="rearOffset">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="offset in offsets" ng-value="offset">{{ offset }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="title">Front Width: </label>
-        <input class="form-control" type="text" ng-model="frontWidth" /><br />
+        <select class="form-control" ng-model="frontWidth">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="width in widths" ng-value="width">{{ width }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="title">Rear Width: </label>
-        <input class="form-control" type="text" ng-model="rearWidth" /><br />
+        <select class="form-control" ng-model="rearWidth">
+          <option value="" selected="selected">------</option>
+          <option ng-repeat="width in widths" ng-value="width">{{ width }}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="boltPattern">Bolt Pattern: </label>
@@ -64,6 +82,18 @@
 </div>
 
  
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(function(){
+    var $select = $(".1-100");
+    for (i=1;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});​
+    }
+  });
+</script> 
+
 
 </div>
 

@@ -4,6 +4,39 @@ angular.module('wheelchimp.createListings', [])
 
   $scope.createListing = {};
 
+  var diameterRange = function(start, end) {
+    var range = [];
+    for (var i = start; i <= end; i++) {
+      range.push(i);
+    }
+    return range;
+  }
+
+  var offsetRange = function(start, end) {
+    var range = [];
+    for (var i = start; i <= end; i++) {
+      if (i >= 0) {
+        range.push('+' + i);
+      } else {
+        range.push('-' + i);
+      }
+    }
+    return range;
+  }
+
+  var widthRange = function(start, end) {
+    var range = [];
+    for (var i = start; i <= end; i+=0.5) {
+      range.push(i);
+    }
+    return range;
+  }
+
+  // Set the ranges for the 3 types of select menus
+  $scope.offsets = offsetRange(-60, 60);
+  $scope.diameters = diameterRange(10, 30);
+  $scope.widths = widthRange(5, 16);
+
   // Submit listing function 
   $scope.submitListing = function () {
 

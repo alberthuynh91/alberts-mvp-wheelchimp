@@ -31,8 +31,8 @@ var ListingSchema = new mongoose.Schema({
   title: { type: String, required: true},
   wheel_specs: { frontdiameter: Number, 
                 reardiameter: Number, 
-                frontoffset: Number, 
-                rearoffset: Number,
+                frontoffset: String, 
+                rearoffset: String,
                 frontwidth: Number,
                 rearwidth: Number, 
                 boltpattern: String
