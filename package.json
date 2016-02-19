@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "gulp karma",
+    "postinstall": "bower install --config.interactive=false && gulp build",
     "start": "gulp",
     "lint": "jscs ./"
   },
